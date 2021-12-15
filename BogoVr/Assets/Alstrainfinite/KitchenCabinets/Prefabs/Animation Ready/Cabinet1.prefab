@@ -58,10 +58,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -86,6 +88,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!64 &-8736059036652751303
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -111,6 +114,7 @@ GameObject:
   - component: {fileID: 6734686510991150899}
   - component: {fileID: 7141536468610512822}
   - component: {fileID: 1638870175580184589}
+  - component: {fileID: 3524714348813379614}
   m_Layer: 0
   m_Name: Cabinet1-D5
   m_TagString: Untagged
@@ -151,10 +155,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -179,6 +185,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3524714348813379614
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1347864328341728458}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.12, y: 0.04, z: 0.045}
+  m_Center: {x: 0.0025, y: 0.266667, z: 0.33}
 --- !u!1 &2078993552655218547
 GameObject:
   m_ObjectHideFlags: 0
@@ -190,6 +210,7 @@ GameObject:
   - component: {fileID: 243535832919450386}
   - component: {fileID: 2758215730982487552}
   - component: {fileID: 7091059689975420318}
+  - component: {fileID: 8624311230786603943}
   m_Layer: 0
   m_Name: Cabinet1-D1
   m_TagString: Untagged
@@ -230,10 +251,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -258,6 +281,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8624311230786603943
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2078993552655218547}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.12, y: 0.04, z: 0.045}
+  m_Center: {x: 0.0025, y: 0.666667, z: 0.33}
 --- !u!1 &2938772735295673699
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,6 +306,7 @@ GameObject:
   - component: {fileID: 2569143573715519600}
   - component: {fileID: 757796005749132334}
   - component: {fileID: 7658774020860766434}
+  - component: {fileID: 2164640708648834952}
   m_Layer: 0
   m_Name: Cabinet1-D4
   m_TagString: Untagged
@@ -309,10 +347,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -337,6 +377,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2164640708648834952
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2938772735295673699}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.12, y: 0.04, z: 0.045}
+  m_Center: {x: 0.0025, y: 0.366667, z: 0.33}
 --- !u!1 &3983275671346781334
 GameObject:
   m_ObjectHideFlags: 0
@@ -348,6 +402,7 @@ GameObject:
   - component: {fileID: 1978379134097371051}
   - component: {fileID: 1884619285701369391}
   - component: {fileID: 7043109406307543369}
+  - component: {fileID: 7348169939001233860}
   m_Layer: 0
   m_Name: Cabinet1-D6
   m_TagString: Untagged
@@ -388,10 +443,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -416,6 +473,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7348169939001233860
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3983275671346781334}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.12, y: 0.04, z: 0.045}
+  m_Center: {x: 0.0025, y: 0.166667, z: 0.33}
 --- !u!1 &4149589231533067402
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,6 +498,7 @@ GameObject:
   - component: {fileID: 660314928461385517}
   - component: {fileID: 7919844552169181052}
   - component: {fileID: 5982941370493633674}
+  - component: {fileID: 7411321839700167599}
   m_Layer: 0
   m_Name: Cabinet1-D3
   m_TagString: Untagged
@@ -467,10 +539,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -495,6 +569,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7411321839700167599
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4149589231533067402}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.12, y: 0.04, z: 0.045}
+  m_Center: {x: 0.0025, y: 0.466667, z: 0.33}
 --- !u!1 &6168288977119499005
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,6 +594,7 @@ GameObject:
   - component: {fileID: 3819344871101645547}
   - component: {fileID: 5656621605286642911}
   - component: {fileID: 1320808518190362772}
+  - component: {fileID: 5693541711722992820}
   m_Layer: 0
   m_Name: Cabinet1-D2
   m_TagString: Untagged
@@ -546,10 +635,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -574,3 +665,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5693541711722992820
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6168288977119499005}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.12, y: 0.04, z: 0.045}
+  m_Center: {x: 0.0025, y: 0.566667, z: 0.33}
