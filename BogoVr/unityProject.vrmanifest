@@ -1,0 +1,16 @@
+{
+  "source": "Unity",
+  "applications": [
+    {
+      "app_key": "application.generated.unity.bogovr.exe",
+      "launch_type": "url",
+      "url": "steam://launch/",
+      "action_manifest_path": "F:\\University Shit The Finale Uncensored\\Serious Games\\Assesment\\BogoVr\\BogoVr\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "strings": {
+        "en_us": {
+          "name": "BogoVr [Testing]"
+        }
+      }
+    }
+  ]
+}

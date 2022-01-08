@@ -2,17 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Widget : MonoBehaviour
+namespace Widget
 {
-    // Start is called before the first frame update
-    void Start()
+    
+    public class Widget : MonoBehaviour
     {
-        
+        protected int m_Val1 = -1, m_Val2 = -1;
+        protected GameObject m_List;
+
+        public void SetVal1(int val) { m_Val1 = val; }
+
+        public void SetVal2(int val) { m_Val2 = val; }
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
