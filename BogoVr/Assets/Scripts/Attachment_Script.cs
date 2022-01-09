@@ -13,6 +13,8 @@ public class Attachment_Script : MonoBehaviour
     {
         Vector3 scale = new Vector3(1.0f, 1.0f, 1.0f);
         gameObject.transform.localScale = scale;
+
+        
     }
 
     public void Dupe() 
@@ -24,5 +26,6 @@ public class Attachment_Script : MonoBehaviour
         }
     }
 
+    public void SetFirstCmd() { GameObject.FindGameObjectWithTag("Keyboard").GetComponent<LevelScript>().SetFirstCmd(gameObject); }
 
 }

@@ -5,25 +5,29 @@ using UnityEngine;
 namespace WidgetScript
 {
     [RequireComponent(typeof(Widget))]
-    public class Swap : Widget
+    public class Greater : Widget
     {
         // Start is called before the first frame update
         public void Operation()
         {
+            Debug.Log(m_Val1 + " + " + m_Val2);
             if (m_Val1 != -1 && m_Val2 != -1)
             {
                 m_List = GameObject.FindGameObjectWithTag("List");
                 if (m_List == null)
                     m_List = GameObject.FindGameObjectWithTag("List_Out");
-                m_List.GetComponent<List_Script>().Swap(m_Val1, m_Val2);
-                PerformOperation();
+                if (m_List.GetComponent<List_Script>().Greater(m_Val1, m_Val2))
+                    PerformOperation(m_NextCmd);
+                else
+                    PerformOperation(m_FalseCmd);
+                
             }
         }
 
-        private void PerformOperation()
+        private void PerformOperation(GameObject next)
         {
-            if (m_NextCmd != null)
-                switch (m_NextCmd.tag)
+            if (next != null)
+                switch (next.tag)
                 {
                     case "Swap":
                         m_NextCmd.GetComponent<Swap>().Operation();
@@ -40,7 +44,6 @@ namespace WidgetScript
 
                 }
         }
+
     }
-
-
 }

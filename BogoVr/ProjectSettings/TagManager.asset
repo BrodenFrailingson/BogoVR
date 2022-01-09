@@ -8,6 +8,13 @@ TagManager:
   - List_Out
   - Out_Tray
   - List_Indice
+  - Swap
+  - '>'
+  - <
+  - Iterate_Through
+  - Keyboard
+  - True
+  - False
   layers:
   - Default
   - TransparentFX

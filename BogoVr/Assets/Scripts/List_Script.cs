@@ -57,4 +57,13 @@ public class List_Script : MonoBehaviour
         m_List_Values[indice2] = temp;
         NumerateList();
     }
+
+    public bool Greater(int indice1, int indice2) 
+    {
+        Debug.Log("in test");
+        if (m_List_Values[indice1] > m_List_Values[indice2])
+            return true;
+        else
+            return false;
+    }
 }
