@@ -9,7 +9,7 @@ public class List_Script : MonoBehaviour
     [SerializeField] private GameObject[] m_Indices;
     public int[] m_List_Values;
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         RandomiseList();
     }
@@ -51,17 +51,20 @@ public class List_Script : MonoBehaviour
     public int GetValueAtIndice(int index) { return m_List_Values[index]; }
 
     public void Swap(int indice1, int indice2) 
-    { 
-        int temp = m_List_Values[indice1]; 
-        m_List_Values[indice1] = m_List_Values[indice2];
-        m_List_Values[indice2] = temp;
-        NumerateList();
+    {
+        if (indice1 != indice2)
+        {
+            int temp = m_List_Values[indice1];
+            m_List_Values[indice1] = m_List_Values[indice2];
+            m_List_Values[indice2] = temp;
+            NumerateList();
+        }
     }
 
     public bool Greater(int indice1, int indice2) 
     {
-        Debug.Log("in test");
-        if (m_List_Values[indice1] > m_List_Values[indice2])
+        Debug.Log(indice1 + " + " + indice2);
+        if (m_List_Values[indice1] > m_List_Values[indice2] && indice1 != indice2)
             return true;
         else
             return false;

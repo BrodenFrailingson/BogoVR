@@ -10,7 +10,7 @@ public class LevelScript : MonoBehaviour
     private GameObject m_List, m_FirstCmd;
 
 
-    private void Awake()
+    public void Awake()
     {
         m_List = Instantiate(m_ListPrefab, m_List_Spawn.position, Quaternion.identity);
     }
@@ -54,8 +54,8 @@ public class LevelScript : MonoBehaviour
                 case "<":
 
                     break;
-                case "Iterate_Through":
-
+                case "For":
+                    m_FirstCmd.GetComponent<Iterate_Fowards>().Operation();
                     break;
 
             }

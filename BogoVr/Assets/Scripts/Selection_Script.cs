@@ -8,13 +8,20 @@ public class Selection_Script : MonoBehaviour
 {
     [SerializeField] private GameObject m_Parent, m_Text;
     private int val;
+    private GameObject indexobj = null;
     public void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "List_Indice") 
+
+        if (other.tag == "List_Indice")
         {
+            indexobj = null;
             m_Text.GetComponent<TextMeshPro>().SetText(other.GetComponent<TextMeshPro>().text);
             val = int.Parse(other.name);
-            Debug.Log(val);
+        }
+        else if (other.tag == "Index") 
+        {
+            indexobj = other.gameObject;
+            m_Text.GetComponent<TextMeshPro>().SetText("index");
         }
     }
 
@@ -23,10 +30,24 @@ public class Selection_Script : MonoBehaviour
         switch (m_Parent.tag)
         {
             case "Swap":
-                m_Parent.GetComponent<Swap>().SetVal1(val);
+                Swap swapscript = m_Parent.GetComponent<Swap>();
+                if (indexobj == null)
+                    swapscript.SetVal1(val);
+                else
+                {
+                    swapscript.SetIndexObj1(indexobj);
+                    swapscript.SetVal1(-2);
+                }
                 break;
             case ">":
-                m_Parent.GetComponent<Greater>().SetVal1(val);
+                Greater Greatscript = m_Parent.GetComponent<Greater>();
+                if (indexobj == null)
+                    Greatscript.SetVal1(val);
+                else
+                {
+                    Greatscript.SetIndexObj1(indexobj);
+                    Greatscript.SetVal1(-2);
+                }
                 break;
         }
     }
@@ -36,10 +57,24 @@ public class Selection_Script : MonoBehaviour
         switch (m_Parent.tag)
         {
             case "Swap":
-                m_Parent.GetComponent<Swap>().SetVal2(val);
+                Swap swapscript = m_Parent.GetComponent<Swap>();
+                if (indexobj == null)
+                    swapscript.SetVal2(val);
+                else
+                {
+                    swapscript.SetIndexObj2(indexobj);
+                    swapscript.SetVal2(-2);
+                }
                 break;
             case ">":
-                m_Parent.GetComponent<Greater>().SetVal2(val);
+                Greater Greatscript = m_Parent.GetComponent<Greater>();
+                if (indexobj == null)
+                    Greatscript.SetVal2(val);
+                else
+                {
+                    Greatscript.SetIndexObj2(indexobj);
+                    Greatscript.SetVal2(-2);
+                }
                 break;
         }
     }
@@ -48,12 +83,9 @@ public class Selection_Script : MonoBehaviour
 
     public void Goto(Transform transform) 
     {
-        Debug.Log("Here");
         Vector3 newpos = transform.position;
         Quaternion newrot = transform.rotation;
         gameObject.transform.position = newpos;
         gameObject.transform.rotation = newrot;
-
-        
     }
 }

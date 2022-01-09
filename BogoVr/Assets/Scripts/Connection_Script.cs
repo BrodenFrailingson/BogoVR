@@ -6,16 +6,18 @@ using WidgetScript;
 
 public class Connection_Script : MonoBehaviour
 {
+    private bool canlink = false;
     [SerializeField] private GameObject m_Parent;
     public void OnTriggerEnter(Collider other)
     {
 
         GetOtherType(other.gameObject);
+        canlink = false;
     }
 
     private void GetOtherType(GameObject other) 
     {
-        if (other.gameObject != m_Parent)
+        if (canlink)
         {
             switch (other.tag)
             {
@@ -25,9 +27,16 @@ public class Connection_Script : MonoBehaviour
                 case ">":
                     GetParentType(other);
                     break;
+                case "<":
+                    GetParentType(other);
+                    break;
+                case "For":
+                    GetParentType(other);
+                    break;
             }
         }
     }
+
 
     private void GetParentType(GameObject other) 
     {
@@ -45,6 +54,26 @@ public class Connection_Script : MonoBehaviour
                 else
                     m_Parent.GetComponent<Greater>().SetFalseCmd(other);
                 break;
+            case "<":
+                if (gameObject.tag == "True")
+                {
+                    Debug.Log(other);
+                    m_Parent.GetComponent<Less>().SetNextCmd(other);
+                }
+                else
+                    m_Parent.GetComponent<Less>().SetFalseCmd(other);
+                break;
+            case "For":
+                if (gameObject.tag == "True")
+                {
+                    Debug.Log(other);
+                    m_Parent.GetComponent<Iterate_Fowards>().SetNextCmd(other);
+                }
+                else
+                {
+                    m_Parent.GetComponent<Iterate_Fowards>().SetFalseCmd(other);
+                }
+                break;
         }
         
     }
@@ -57,4 +86,6 @@ public class Connection_Script : MonoBehaviour
         gameObject.transform.rotation = newrot;
         
     }
+
+    public void SetLink() { canlink = true; }
 }
