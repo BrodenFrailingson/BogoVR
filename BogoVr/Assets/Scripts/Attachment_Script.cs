@@ -11,9 +11,6 @@ public class Attachment_Script : MonoBehaviour
 
     public void Awake()
     {
-        Vector3 scale = new Vector3(2.0f, 2.0f, 2.0f);
-        gameObject.transform.localScale = scale;
-
         
     }
 
@@ -26,6 +23,6 @@ public class Attachment_Script : MonoBehaviour
         }
     }
 
-    public void SetFirstCmd() { GameObject.FindGameObjectWithTag("Keyboard").GetComponent<LevelScript>().SetFirstCmd(gameObject); }
+    public void SetFirstCmd() { return; }//GameObject.FindGameObjectWithTag("Keyboard").GetComponent<LevelScript>().SetFirstCmd(gameObject); }
 
 }

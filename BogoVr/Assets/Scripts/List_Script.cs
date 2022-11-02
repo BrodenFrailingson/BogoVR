@@ -6,37 +6,50 @@ using TMPro;
 public class List_Script : MonoBehaviour
 {
 
-    [SerializeField] private GameObject[] m_Indices;
-    public int[] m_List_Values;
+    private TextMeshPro[] Texts;
+    private int[] m_List_Values;
+
+    [SerializeField] private GameObject m_Indices;
+
+    public int[] ListVals { get { return m_List_Values; } }
+
     // Start is called before the first frame update
     public void Start()
     {
+        Texts = m_Indices.GetComponentsInChildren<TextMeshPro>();
         RandomiseList();
     }
 
-    private void RandomiseList() 
+    public void Awake()
     {
-        
-        for (int i = 0; i < 6; i++) 
+        Texts = m_Indices.GetComponentsInChildren<TextMeshPro>();
+        RandomiseList();
+    }
+
+    private void RandomiseList()
+    {
+
+        for (int i = 0; i < Texts.Length; i++)
         {
-            m_List_Values[i] = Random.Range(0, 100);   
+            m_List_Values[i] = Random.Range(0, 100);
         }
         NumerateList();
     }
 
-    private void NumerateList() 
+    private void NumerateList()
     {
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < Texts.Length; i++)
         {
-            m_Indices[i].GetComponent<TextMeshPro>().SetText(m_List_Values[i].ToString());
+            Texts[i].SetText(m_List_Values[i].ToString());
         }
     }
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Out_Tray") 
+        if (other.gameObject.tag == "Outside")
         {
-            gameObject.tag = "List_Out";
+            Instantiate(gameObject, new Vector3(0.0f,0.0f,0.0f), Quaternion.identity);
+            Destroy(gameObject);
         }
     }
 
@@ -48,9 +61,9 @@ public class List_Script : MonoBehaviour
         }
     }
 
-    public int GetValueAtIndice(int index) { return m_List_Values[index]; }
+    public int GetValueAtIndice(int index) => m_List_Values[index];
 
-    public void Swap(int indice1, int indice2) 
+    public void Swap(int indice1, int indice2)
     {
         if (indice1 != indice2)
         {
@@ -61,12 +74,9 @@ public class List_Script : MonoBehaviour
         }
     }
 
-    public bool Greater(int indice1, int indice2) 
-    {
-        Debug.Log(indice1 + " + " + indice2);
-        if (m_List_Values[indice1] > m_List_Values[indice2] && indice1 != indice2)
-            return true;
-        else
-            return false;
-    }
+    public bool Greater(int indice1, int indice2) => (indice1 != indice2 && m_List_Values[indice1] > m_List_Values[indice2]);
+
+    public bool Less(int indice1, int indice2) => (indice1 != indice2 && m_List_Values[indice1] < m_List_Values[indice2]);
+
+    
 }

@@ -8,39 +8,30 @@ namespace WidgetScript
     public class Iterate_Fowards : Widget
     {
         // Start is called before the first frame update
-        public void Operation()
+        public override Widget InLoopCmd { get { return m_InLoopCmd; }  set{ m_InLoopCmd = value; } }
+        public override Widget OutLoopCmd { get{ return m_OutLoopCmd; } set{ m_OutLoopCmd = value; } }
+        public override int LoopIndex { get { return m_loop_Index; }}
+
+        public override void Operation()
         {
             for (int i = 0; i < 6; i++)
             {
-                Debug.Log(m_NextCmd);
-                SetLoopIndex(i);
-                PerformOperation(m_NextCmd);
+                //Debug.Log(m_InLoopCmd);
+                if (m_InLoopCmd)
+                    m_InLoopCmd.Operation();
+                m_loop_Index = i;
             }
-            PerformOperation(m_FalseCmd);
+
+            if (!m_OutLoopCmd)
+                return;
+            m_OutLoopCmd.Operation();
         }
 
-        private void PerformOperation(GameObject next)
-        {
-            if (next != null)
-            {
-                switch (next.tag)
-                {
-                    case "Swap":
-                        m_NextCmd.GetComponent<Swap>().Operation();
-                        break;
-                    case "<":
-                        m_NextCmd.GetComponent<Less>().Operation();
-                        break;
-                    case ">":
-                        Debug.Log("bouta enter greater");
-                        m_NextCmd.GetComponent<Greater>().Operation();
-                        break;
-                    case "For":
-                        m_NextCmd.GetComponent<Iterate_Fowards>().Operation();
-                        break;
 
-                }
-            }
-        }
+        //do nothings//
+        public override void SetIndexObj(int index, Index_Script obj) { /*Do Nothing */ }
+        public override int Val1 { get; set; }
+        public override int Val2 { get; set; }
+
     }
 }

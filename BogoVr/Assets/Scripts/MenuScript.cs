@@ -10,8 +10,15 @@ public class MenuScript : MonoBehaviour
     public void LoadGame()
     {
         Player.transform.position = new Vector3(0, 0, 0);
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Level_1");
         Debug.Log("Load Level 1");
+    }
+
+    public void MainMenu()
+    {
+        Player.transform.position = new Vector3(0, 0, 0);
+        SceneManager.LoadScene("TitleScene");
+        Debug.Log("Tutorial");
     }
 
     public void LoadTutorial()

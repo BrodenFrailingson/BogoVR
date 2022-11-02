@@ -26,9 +26,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 409159680262302792}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 8560535631071560907}
   - {fileID: 6806371082437157935}
@@ -281,6 +281,7 @@ GameObject:
   - component: {fileID: 8459651213525268115}
   - component: {fileID: 1400418157975378918}
   - component: {fileID: 8647834725730929402}
+  - component: {fileID: 2309684997718277963}
   m_Layer: 0
   m_Name: Cabinet1-D5
   m_TagString: Untagged
@@ -360,7 +361,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1347864328341728458}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.06, z: 0.045}
@@ -464,6 +465,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 0
+--- !u!64 &2309684997718277963
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1347864328341728458}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -4268593689301007385, guid: a4fedeb4f03d9a244bfa3c9157637d34, type: 3}
 --- !u!1 &1516423075079435068
 GameObject:
   m_ObjectHideFlags: 0
@@ -609,6 +624,7 @@ GameObject:
   - component: {fileID: 2902591811005892091}
   - component: {fileID: 2314320795518064932}
   - component: {fileID: 1437207863316074292}
+  - component: {fileID: 3158053139378334160}
   m_Layer: 0
   m_Name: Cabinet1-D1
   m_TagString: Untagged
@@ -688,7 +704,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2078993552655218547}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.06, z: 0.045}
@@ -792,6 +808,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 0
+--- !u!64 &3158053139378334160
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2078993552655218547}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8372721882768908396, guid: a4fedeb4f03d9a244bfa3c9157637d34, type: 3}
 --- !u!1 &2400676993097392110
 GameObject:
   m_ObjectHideFlags: 0
@@ -1000,6 +1030,7 @@ GameObject:
   - component: {fileID: 8528938364779682553}
   - component: {fileID: 677160365608572731}
   - component: {fileID: 2733106027627379822}
+  - component: {fileID: 1803903208360613591}
   m_Layer: 0
   m_Name: Cabinet1-D4
   m_TagString: Untagged
@@ -1079,7 +1110,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2938772735295673699}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.06, z: 0.045}
@@ -1183,6 +1214,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 0
+--- !u!64 &1803903208360613591
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2938772735295673699}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8762911383459351368, guid: a4fedeb4f03d9a244bfa3c9157637d34, type: 3}
 --- !u!1 &3983275671346781334
 GameObject:
   m_ObjectHideFlags: 0
@@ -1199,6 +1244,7 @@ GameObject:
   - component: {fileID: 3472139002002125800}
   - component: {fileID: 4390352785327675761}
   - component: {fileID: 3303048445404448471}
+  - component: {fileID: 8637738794769414825}
   m_Layer: 0
   m_Name: Cabinet1-D6
   m_TagString: Untagged
@@ -1278,7 +1324,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3983275671346781334}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.06, z: 0.045}
@@ -1382,6 +1428,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 0
+--- !u!64 &8637738794769414825
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3983275671346781334}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3254996786901087779, guid: a4fedeb4f03d9a244bfa3c9157637d34, type: 3}
 --- !u!1 &4149589231533067402
 GameObject:
   m_ObjectHideFlags: 0
@@ -1398,6 +1458,7 @@ GameObject:
   - component: {fileID: 385886016679896471}
   - component: {fileID: 5162111146710130553}
   - component: {fileID: 7840856031969471571}
+  - component: {fileID: 1500962490061957965}
   m_Layer: 0
   m_Name: Cabinet1-D3
   m_TagString: Untagged
@@ -1477,7 +1538,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4149589231533067402}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.06, z: 0.045}
@@ -1581,6 +1642,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 0
+--- !u!64 &1500962490061957965
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4149589231533067402}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -4587595635365015010, guid: a4fedeb4f03d9a244bfa3c9157637d34, type: 3}
 --- !u!1 &4207326528763985028
 GameObject:
   m_ObjectHideFlags: 0
@@ -2173,6 +2248,7 @@ GameObject:
   - component: {fileID: 6737700393884888494}
   - component: {fileID: 2601239832973498789}
   - component: {fileID: 3244296313444885202}
+  - component: {fileID: 8356555123504549593}
   m_Layer: 0
   m_Name: Cabinet1-D2
   m_TagString: Untagged
@@ -2252,7 +2328,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6168288977119499005}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.06, z: 0.045}
@@ -2356,6 +2432,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 0
+--- !u!64 &8356555123504549593
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6168288977119499005}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8797732870101375585, guid: a4fedeb4f03d9a244bfa3c9157637d34, type: 3}
 --- !u!1 &6854264053046621291
 GameObject:
   m_ObjectHideFlags: 0

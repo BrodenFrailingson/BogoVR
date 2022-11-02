@@ -18,6 +18,8 @@ TagManager:
   - Item_1
   - Item_2
   - For
+  - Outside
+  - Queue
   layers:
   - Default
   - TransparentFX

@@ -32,21 +32,31 @@ public class Selection_Script : MonoBehaviour
             case "Swap":
                 Swap swapscript = m_Parent.GetComponent<Swap>();
                 if (indexobj == null)
-                    swapscript.SetVal1(val);
+                    swapscript.Val1 = val;
                 else
                 {
-                    swapscript.SetIndexObj1(indexobj);
-                    swapscript.SetVal1(-2);
+                    swapscript.SetIndexObj(0, indexobj.GetComponent<Index_Script>());
+                    swapscript.Val1 = -2;
                 }
                 break;
             case ">":
                 Greater Greatscript = m_Parent.GetComponent<Greater>();
                 if (indexobj == null)
-                    Greatscript.SetVal1(val);
+                    Greatscript.Val1 = val;
                 else
                 {
-                    Greatscript.SetIndexObj1(indexobj);
-                    Greatscript.SetVal1(-2);
+                    Greatscript.SetIndexObj(0, indexobj.GetComponent<Index_Script>());
+                    Greatscript.Val1 = -2;
+                }
+                break;
+            case "<":
+                Less Lessscript = m_Parent.GetComponent<Less>();
+                if (indexobj == null)
+                    Lessscript.Val1 = val;
+                else
+                {
+                    Lessscript.SetIndexObj(0, indexobj.GetComponent<Index_Script>());
+                    Lessscript.Val1 = -2;
                 }
                 break;
         }
@@ -59,21 +69,31 @@ public class Selection_Script : MonoBehaviour
             case "Swap":
                 Swap swapscript = m_Parent.GetComponent<Swap>();
                 if (indexobj == null)
-                    swapscript.SetVal2(val);
+                    swapscript.Val2 = val;
                 else
                 {
-                    swapscript.SetIndexObj2(indexobj);
-                    swapscript.SetVal2(-2);
+                    swapscript.SetIndexObj(1, indexobj.GetComponent<Index_Script>());
+                    swapscript.Val2 = -2;
                 }
                 break;
             case ">":
                 Greater Greatscript = m_Parent.GetComponent<Greater>();
                 if (indexobj == null)
-                    Greatscript.SetVal2(val);
+                    Greatscript.Val2 = val;
                 else
                 {
-                    Greatscript.SetIndexObj2(indexobj);
-                    Greatscript.SetVal2(-2);
+                    Greatscript.SetIndexObj(1, indexobj.GetComponent<Index_Script>());
+                    Greatscript.Val2 = -2;
+                }
+                break;
+            case "<":
+                Less Lessscript = m_Parent.GetComponent<Less>();
+                if (indexobj == null)
+                    Lessscript.Val2 = val;
+                else
+                {
+                    Lessscript.SetIndexObj(1, indexobj.GetComponent<Index_Script>());
+                    Lessscript.Val2 = -2;
                 }
                 break;
         }
