@@ -15,10 +15,12 @@ namespace WidgetScript
         public override void SetIndexObj(int index, Index_Script obj) { m_Index_Obj[index] = obj; }
 
 
-        public void Awake()
+        public void Start()
         {
             m_List = GameObject.FindGameObjectWithTag("List").GetComponent<List_Script>();
+            m_Index_Obj = new Index_Script[2];
         }
+
 
 
         public override void Operation()

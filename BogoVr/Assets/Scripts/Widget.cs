@@ -9,7 +9,7 @@ namespace WidgetScript
     {
         protected int m_Val1 = -1, m_Val2 = -1, m_loop_Index = 0;
         protected List_Script m_List;
-        protected Widget m_InLoopCmd, m_OutLoopCmd;
+        protected Widget m_InLoopCmd, m_OutLoopCmd, m_PrevCmd;
         protected Index_Script[] m_Index_Obj;
 
         

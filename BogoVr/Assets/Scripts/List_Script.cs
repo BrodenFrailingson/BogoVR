@@ -13,12 +13,6 @@ public class List_Script : MonoBehaviour
 
     public int[] ListVals { get { return m_List_Values; } }
 
-    // Start is called before the first frame update
-    public void Start()
-    {
-        Texts = m_Indices.GetComponentsInChildren<TextMeshPro>();
-        RandomiseList();
-    }
 
     public void Awake()
     {
@@ -28,7 +22,7 @@ public class List_Script : MonoBehaviour
 
     private void RandomiseList()
     {
-
+        m_List_Values = new int[6];
         for (int i = 0; i < Texts.Length; i++)
         {
             m_List_Values[i] = Random.Range(0, 100);
@@ -53,18 +47,11 @@ public class List_Script : MonoBehaviour
         }
     }
 
-    public void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "Out_Tray")
-        {
-            gameObject.tag = "List";
-        }
-    }
-
     public int GetValueAtIndice(int index) => m_List_Values[index];
 
     public void Swap(int indice1, int indice2)
     {
+        Debug.Log("Swap: " + m_List_Values[indice1] + " and " + m_List_Values[indice2]);
         if (indice1 != indice2)
         {
             int temp = m_List_Values[indice1];
@@ -74,9 +61,14 @@ public class List_Script : MonoBehaviour
         }
     }
 
-    public bool Greater(int indice1, int indice2) => (indice1 != indice2 && m_List_Values[indice1] > m_List_Values[indice2]);
+    public bool Greater(int indice1, int indice2) => (indice1 < indice2 && m_List_Values[indice1] > m_List_Values[indice2]);
 
-    public bool Less(int indice1, int indice2) => (indice1 != indice2 && m_List_Values[indice1] < m_List_Values[indice2]);
+    public bool Less(int indice1, int indice2) 
+    {
+        Debug.Log("Comparing: " + m_List_Values[indice1] + " and " + m_List_Values[indice2] + 
+            " result: " + (indice1 < indice2 && m_List_Values[indice1] < m_List_Values[indice2]));
+        return (indice1 < indice2 && m_List_Values[indice1] < m_List_Values[indice2]); 
+    }
 
     
 }

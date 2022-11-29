@@ -6,119 +6,70 @@ using WidgetScript;
 
 public class Connection_Script : MonoBehaviour
 {
-    private bool canlink = false;
+    private bool _canlink = false;
     private GameObject m_Parent;
-    private Widget m_Type;
+    private Widget m_ParentScript;
 
-    //public void Awake()
-    //{
-    //    m_Parent = transform.root.gameObject;
+    public bool canlink{ set{ _canlink = value; } }
 
-    //    switch (m_Parent.tag)
-    //    {
-    //        case "Swap":
-    //            m_Type = m_Parent.GetComponent<Swap>();
-    //            break;
-    //        case ">":
-    //            m_Type = m_Parent.GetComponent<Greater>();
-    //            break;
-    //        case "<":
-    //            if (gameObject.tag == "True")
-    //            {
-    //                m_Parent.GetComponent<Less>().SetNextCmd(other);
-    //            }
-    //            else
-    //                m_Parent.GetComponent<Less>().SetFalseCmd(other);
-    //            break;
-    //        case "For":
-    //            if (gameObject.tag == "True")
-    //            {
-    //                m_Parent.GetComponent<Iterate_Fowards>().SetNextCmd(other);
-    //            }
-    //            else
-    //            {
-    //                m_Parent.GetComponent<Iterate_Fowards>().SetFalseCmd(other);
-    //            }
-    //            break;
-    //    }
-    //}
+    public void Awake()
+    {
+        m_Parent = transform.root.gameObject;
+        m_ParentScript = GetObjectScript(m_Parent);
+    }
 
 
-    //public void OnTriggerEnter(Collider other)
-    //{
+    public Widget GetObjectScript(GameObject _object) 
+    {
+        Widget script = null;
+        switch (_object.tag)
+        {
+            case "Swap":
+                script = _object.GetComponent<Swap>();
+                break;
+            case ">":
+                script = _object.GetComponent<Greater>();
+                break;
+            case "<":
+                script = _object.GetComponent<Less>();
+                break;
+            case "For":
+                script = _object.GetComponent<Iterate_Fowards>();
+                break;
+        }
+        return script;
+    }
 
-    //    GetOtherType(other.gameObject);
-    //    canlink = false;
-    //}
-
-    //private void GetOtherType(GameObject other) 
-    //{
-    //    if (canlink)
-    //    {
-    //        switch (other.tag)
-    //        {
-    //            case "Swap":
-    //                GetParentType(other);
-    //                break;
-    //            case ">":
-    //                GetParentType(other);
-    //                break;
-    //            case "<":
-    //                GetParentType(other);
-    //                break;
-    //            case "For":
-    //                GetParentType(other);
-    //                break;
-    //        }
-    //    }
-    //}
-
-
-    //private void GetParentType(GameObject other) 
-    //{
-    //    switch (m_Parent.tag)
-    //    {
-    //        case "Swap":
-    //            m_Parent.GetComponent<Swap>().InLoopCmd = other.GetComponent<Swap>();
-    //            break;
-    //        case ">":
-    //            if (gameObject.tag == "True")
-    //            {
-    //                m_Parent.GetComponent<Greater>().SetNextCmd(other);
-    //            }
-    //            else
-    //                m_Parent.GetComponent<Greater>().SetFalseCmd(other);
-    //            break;
-    //        case "<":
-    //            if (gameObject.tag == "True")
-    //            {
-    //                m_Parent.GetComponent<Less>().SetNextCmd(other);
-    //            }
-    //            else
-    //                m_Parent.GetComponent<Less>().SetFalseCmd(other);
-    //            break;
-    //        case "For":
-    //            if (gameObject.tag == "True")
-    //            {
-    //                m_Parent.GetComponent<Iterate_Fowards>().SetNextCmd(other);
-    //            }
-    //            else
-    //            {
-    //                m_Parent.GetComponent<Iterate_Fowards>().SetFalseCmd(other);
-    //            }
-    //            break;
-    //    }
+    public void OnTriggerEnter(Collider other)
+    {
         
-    //}
+        if (other.gameObject == m_Parent)
+            return;
+        if (!_canlink)
+            return;
 
-    //public void Goto(Transform transform) 
-    //{
-    //    Vector3 newpos = transform.position;
-    //    Quaternion newrot = transform.rotation;
-    //    gameObject.transform.position = newpos;
-    //    gameObject.transform.rotation = newrot;
-        
-    //}
+        if (other.gameObject.tag == "Swap" || 
+            other.gameObject.tag == ">" || 
+            other.gameObject.tag == "<" || 
+            other.gameObject.tag == "For")
+        {
+            Widget otherScript;
+            otherScript = GetObjectScript(other.gameObject);
+            if (gameObject.tag == "True")
+                m_ParentScript.InLoopCmd = otherScript;
+            if (gameObject.tag == "False")
+                m_ParentScript.OutLoopCmd = otherScript;
+            _canlink = false;
+        }
+    }
 
-    public void SetLink() { canlink = true; }
+    public void Goto(Transform transform)
+    {
+        Vector3 newpos = transform.position;
+        Quaternion newrot = transform.rotation;
+        gameObject.transform.position = newpos;
+        gameObject.transform.rotation = newrot;
+        gameObject.transform.localScale = new Vector3(0.2f, 0.4f, 0.2f);
+
+    }
 }

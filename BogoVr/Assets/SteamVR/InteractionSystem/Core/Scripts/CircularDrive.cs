@@ -274,6 +274,7 @@ namespace Valve.VR.InteractionSystem
 				}
 
                 driving = false;
+				outAngle = transform.rotation.z;
                 grabbedWithType = GrabTypes.None;
             }
 
@@ -435,6 +436,7 @@ namespace Valve.VR.InteractionSystem
 		//-------------------------------------------------
 		private void UpdateAll()
 		{
+			//Debug.Log(outAngle);
 			UpdateLinearMapping();
 			UpdateGameObject();
 			UpdateDebugText();

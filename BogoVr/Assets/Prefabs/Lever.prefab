@@ -126,7 +126,6 @@ GameObject:
   - component: {fileID: 3884257405835514028}
   - component: {fileID: 3884257405835513939}
   - component: {fileID: 3884257405835513936}
-  - component: {fileID: 4086103313536412988}
   - component: {fileID: 9219090755981055251}
   m_Layer: 0
   m_Name: Cylinder
@@ -143,7 +142,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3884257405835514029}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.14, y: -0.01, z: 0}
   m_LocalScale: {x: 1, y: 10, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -216,10 +215,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f32883eed859804dbb0c5fedac91496, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisOfRotation: 1
-  childCollider: {fileID: 0}
+  axisOfRotation: 2
+  childCollider: {fileID: 526015771}
   linearMapping: {fileID: 0}
-  hoverLock: 0
+  hoverLock: 1
   limited: 1
   frozenDistanceMinMaxThreshold: {x: 0.1, y: 0.2}
   onFrozenDistanceThreshold:
@@ -230,31 +229,18 @@ MonoBehaviour:
   onMinAngle:
     m_PersistentCalls:
       m_Calls: []
-  maxAngle: 90
+  maxAngle: 40
   freezeOnMax: 0
   onMaxAngle:
     m_PersistentCalls:
       m_Calls: []
-  forceStart: 0
+  forceStart: 1
   startAngle: 0
   rotateGameObject: 1
   debugPath: 0
   dbgPathLimit: 50
   debugText: {fileID: 0}
   outAngle: 0
---- !u!65 &4086103313536412988
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3884257405835514029}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.05, y: 0.05, z: 0.05}
-  m_Center: {x: 0, y: 0.025, z: 0}
 --- !u!65 &9219090755981055251
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -281,6 +267,7 @@ GameObject:
   - component: {fileID: 3418177191300935680}
   - component: {fileID: 337492604082752026}
   - component: {fileID: 474172258328208867}
+  - component: {fileID: 526015771}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -565,7 +552,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 10404
+  m_VersionIndex: 10464
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -597,3 +584,16 @@ MonoBehaviour:
     RefIds:
     - rid: 5030439728827596809
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
+--- !u!65 &526015771
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5036418244238156912}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.05, y: 0.05, z: 0.05}
+  m_Center: {x: 0, y: -0.000000007450581, z: 0}

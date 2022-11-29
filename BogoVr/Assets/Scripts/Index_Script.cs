@@ -5,7 +5,11 @@ using WidgetScript;
 
 public class Index_Script : MonoBehaviour
 {
-    [SerializeField] private Iterate_Fowards m_Loop;
+    private Iterate_Fowards m_Loop;
+    private void Start()
+    {
+        m_Loop = transform.parent.gameObject.GetComponent<Iterate_Fowards>();
+    }
 
     public int GetIndex() => m_Loop.LoopIndex;
 }

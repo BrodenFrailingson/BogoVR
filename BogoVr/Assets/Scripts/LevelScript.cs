@@ -10,7 +10,7 @@ public class LevelScript : MonoBehaviour
     [SerializeField] private GameObject m_ListPrefab;
     [SerializeField] private TextMeshPro m_monitor;
     [SerializeField] private Transform m_List_Spawn;
-    [SerializeField] private GameObject m_CmdQueue;
+    private GameObject m_FirstCmd = null;
     private GameObject m_List;
     private readonly string m_cmd1 = "Please Sort this list\nin Ascending order!";
     private readonly string m_cmd2 = "Please Sort this list\nin decending order!";
@@ -22,7 +22,9 @@ public class LevelScript : MonoBehaviour
 
     public void Awake()
     {
-        m_List = Instantiate(m_ListPrefab, m_List_Spawn.position, Quaternion.identity);
+        Vector3 rot = new Vector3(0.0f, 90.0f, 0.0f);
+        m_List = Instantiate(m_ListPrefab, m_List_Spawn.position, Quaternion.Euler(rot));
+        m_List.transform.localScale = new Vector3(0.15f, 0.05f, 0.15f);
         m_monitor.SetText(m_cmd1);
     }
 
@@ -50,12 +52,14 @@ public class LevelScript : MonoBehaviour
             Destroy(m_List);
             Accending = !Accending;
             m_monitor.SetText(m_cmd1);
-            int children = m_CmdQueue.transform.childCount;
+            int children = gameObject.transform.childCount;
             for (int i = 0; i < children; i++) 
             {
-                Destroy(m_CmdQueue.transform.GetChild(i).gameObject);
+                Destroy(gameObject.transform.GetChild(i).gameObject);
             }
             m_List = Instantiate(m_ListPrefab, m_List_Spawn.position, Quaternion.identity);
+            m_List.transform.localScale = new Vector3(0.15f, 0.05f, 0.15f);
+            m_FirstCmd = null;
         }
         else if (!Issorted)
         {
@@ -64,13 +68,6 @@ public class LevelScript : MonoBehaviour
             Message += m_error;
             m_monitor.SetText(Message);
         }
-    }
-
-    public void KeyboardPress() 
-    {
-        if (m_List)
-            return;
-        m_List = Instantiate(m_ListPrefab, m_List_Spawn.position, Quaternion.identity);
     }
 
     private bool IsSorted(bool accending) 
@@ -87,18 +84,15 @@ public class LevelScript : MonoBehaviour
                     {
                         return false;
                     }
-                    return true;
                 }
                 break;
             case true:
-                
                 for (int i = 0; i < 5; i++)
                 {
                     if (m_Vals[i] < m_Vals[i + 1])
                     {
                         return false;
                     }
-                    return true;
                 }
                 break;
         }
@@ -107,26 +101,31 @@ public class LevelScript : MonoBehaviour
 
     private void PerformOperation() 
     {
-        if (m_CmdQueue.transform.childCount == 0)
+        if (m_FirstCmd == null)
             return;
 
-        GameObject child = m_CmdQueue.transform.GetChild(0).gameObject;
-
-        switch (child.tag)
+        switch (m_FirstCmd.tag)
         {
             case "Swap":
-                child.GetComponent<Swap>().Operation();
+                m_FirstCmd.GetComponent<Swap>().Operation();
                 break;
             case ">":
-                child.GetComponent<Greater>().Operation();
+                m_FirstCmd.GetComponent<Greater>().Operation();
                 break;
             case "<":
-                child.GetComponent<Less>().Operation();
+                m_FirstCmd.GetComponent<Less>().Operation();
                 break;
             case "For":
-                child.GetComponent<Iterate_Fowards>().Operation();
+                m_FirstCmd.GetComponent<Iterate_Fowards>().Operation();
                 break;
 
         }
+    }
+
+    public void SetFirstCmd(GameObject cmd) 
+    {
+        if (m_FirstCmd != null)
+            return;
+        m_FirstCmd = cmd;
     }
 }

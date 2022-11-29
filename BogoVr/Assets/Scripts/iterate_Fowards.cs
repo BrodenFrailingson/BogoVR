@@ -12,16 +12,17 @@ namespace WidgetScript
         public override Widget OutLoopCmd { get{ return m_OutLoopCmd; } set{ m_OutLoopCmd = value; } }
         public override int LoopIndex { get { return m_loop_Index; }}
 
+
         public override void Operation()
         {
             for (int i = 0; i < 6; i++)
             {
-                //Debug.Log(m_InLoopCmd);
-                if (m_InLoopCmd)
+                if (m_InLoopCmd != null)
+                {
                     m_InLoopCmd.Operation();
+                }
                 m_loop_Index = i;
             }
-
             if (!m_OutLoopCmd)
                 return;
             m_OutLoopCmd.Operation();

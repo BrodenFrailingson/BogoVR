@@ -269,13 +269,12 @@ GameObject:
   - component: {fileID: 6707846811031532216}
   - component: {fileID: 2903947462436722323}
   - component: {fileID: 2141622818}
-  - component: {fileID: 8481222443326793459}
-  - component: {fileID: 2165830751610544048}
   - component: {fileID: 713994602436520914}
   - component: {fileID: 4243747039539858616}
   - component: {fileID: 8445497333441237659}
   - component: {fileID: 5301447673078966208}
   - component: {fileID: 7005585321788172588}
+  - component: {fileID: 768417222147606106}
   m_Layer: 0
   m_Name: Swap
   m_TagString: Swap
@@ -396,25 +395,13 @@ MonoBehaviour:
   onAttachedToHand:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2903947462436722323}
-        m_TargetAssemblyTypeName: Attachment_Script, Assembly-CSharp
-        m_MethodName: Dupe
-        m_Mode: 1
+      - m_Target: {fileID: 186394808272568642}
+        m_TargetAssemblyTypeName: UnityEngine.Transform, UnityEngine
+        m_MethodName: SetParent
+        m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2903947462436722323}
-        m_TargetAssemblyTypeName: Attachment_Script, Assembly-CSharp
-        m_MethodName: SetFirstCmd
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -491,30 +478,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   interactable: {fileID: 0}
---- !u!114 &8481222443326793459
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1538740390982868535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3e0c6f1e7cf2184aba2c6a54165e105, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2165830751610544048
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1538740390982868535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e57030b0637d3e444b9bf94e319fceef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!23 &713994602436520914
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2141,6 +2104,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &768417222147606106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1538740390982868535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e57030b0637d3e444b9bf94e319fceef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2299197960528901768
 GameObject:
   m_ObjectHideFlags: 0
@@ -2568,7 +2543,7 @@ GameObject:
   - component: {fileID: 1094948957025076850}
   m_Layer: 0
   m_Name: Connector
-  m_TagString: Untagged
+  m_TagString: True
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2739,7 +2714,19 @@ MonoBehaviour:
       m_Calls: []
   onAttachedToHand:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1094948957025076850}
+        m_TargetAssemblyTypeName: Connection_Script, Assembly-CSharp
+        m_MethodName: CanLink
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onDetachedFromHand:
     m_PersistentCalls:
       m_Calls:
@@ -2821,7 +2808,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2e8d7d7415937a41b75bd966ddcd8a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Parent: {fileID: 1538740390982868535}
 --- !u!1 &4758280141183946451
 GameObject:
   m_ObjectHideFlags: 0
