@@ -51,7 +51,6 @@ public class List_Script : MonoBehaviour
 
     public void Swap(int indice1, int indice2)
     {
-        Debug.Log("Swap: " + m_List_Values[indice1] + " and " + m_List_Values[indice2]);
         if (indice1 != indice2)
         {
             int temp = m_List_Values[indice1];
@@ -63,12 +62,6 @@ public class List_Script : MonoBehaviour
 
     public bool Greater(int indice1, int indice2) => (indice1 < indice2 && m_List_Values[indice1] > m_List_Values[indice2]);
 
-    public bool Less(int indice1, int indice2) 
-    {
-        Debug.Log("Comparing: " + m_List_Values[indice1] + " and " + m_List_Values[indice2] + 
-            " result: " + (indice1 < indice2 && m_List_Values[indice1] < m_List_Values[indice2]));
-        return (indice1 < indice2 && m_List_Values[indice1] < m_List_Values[indice2]); 
-    }
-
+    public bool Less(int indice1, int indice2) => (indice1 < indice2 && m_List_Values[indice1] < m_List_Values[indice2]); 
     
 }

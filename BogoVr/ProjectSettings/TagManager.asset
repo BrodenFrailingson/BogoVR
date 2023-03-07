@@ -14,13 +14,14 @@ TagManager:
   - Keyboard
   - True
   - False
-  - Index
   - Item_1
   - Item_2
   - For
   - Outside
   - Queue
   - Board
+  - i
+  - i-1
   layers:
   - Default
   - TransparentFX

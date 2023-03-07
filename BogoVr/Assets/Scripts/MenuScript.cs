@@ -6,31 +6,23 @@ using UnityEngine.SceneManagement;
 public class MenuScript : MonoBehaviour
 {
     // load level 1
-    public GameObject Player;
     public void LoadGame()
     {
-        Player.transform.position = new Vector3(0, 0, 0);
-        SceneManager.LoadScene("Level_1");
-        Debug.Log("Load Level 1");
+        SceneManager.LoadScene(1);
     }
 
     public void MainMenu()
     {
-        Player.transform.position = new Vector3(0, 0, 0);
-        SceneManager.LoadScene("TitleScene");
-        Debug.Log("Tutorial");
+        SceneManager.LoadScene(0);
     }
 
     public void LoadTutorial()
     {
-        Player.transform.position = new Vector3(0, 0, 0);
-        SceneManager.LoadScene("Tutorial");
-        Debug.Log("Tutorial");
+        SceneManager.LoadScene(2);
     }
     //quit the application
     public void QuitGame()
     {
         Application.Quit();
-        Debug.Log("Quit");
     }
 }

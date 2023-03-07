@@ -80,7 +80,7 @@ public class LevelScript : MonoBehaviour
                 
                 for (int i =0; i<5; i++) 
                 {
-                    if (m_Vals[i] > m_Vals[i + 1]) 
+                    if (m_Vals[i] < m_Vals[i + 1]) 
                     {
                         return false;
                     }
@@ -89,7 +89,7 @@ public class LevelScript : MonoBehaviour
             case true:
                 for (int i = 0; i < 5; i++)
                 {
-                    if (m_Vals[i] < m_Vals[i + 1])
+                    if (m_Vals[i] > m_Vals[i + 1])
                     {
                         return false;
                     }

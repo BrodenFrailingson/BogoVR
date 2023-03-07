@@ -20,18 +20,16 @@ public class Selection_Script : MonoBehaviour
             m_Text.GetComponent<TextMeshPro>().SetText(other.GetComponent<TextMeshPro>().text);
             val = int.Parse(other.name);
         }
-        else if (other.tag == "Index") 
+        else if (other.tag == "i")
         {
             indexobj = other.gameObject.GetComponent<Index_Script>();
-            //Debug.Log(indexobj);
-            m_Text.GetComponent<TextMeshPro>().SetText("i");
+            m_Text.GetComponent<TextMeshPro>().SetText(indexobj.Symbol);
         }
     }
 
     public void SetVal1() 
     {
         Widget parent = GetObjectScript(m_Parent);
-        Debug.Log(parent);
         if (indexobj == null)
             parent.Val1 = val;
         else
@@ -44,7 +42,6 @@ public class Selection_Script : MonoBehaviour
     public void SetVal2()
     {
         Widget parent = GetObjectScript(m_Parent);
-        //Debug.Log(parent);
         if (indexobj == null)
             parent.Val2 = val;
         else

@@ -28,31 +28,32 @@ namespace WidgetScript
             if(!m_List)
                 m_List = GameObject.FindGameObjectWithTag("List").GetComponent<List_Script>();
 
-            if (m_Val1 == -2 && m_Val2 == -2)
+            switch ((m_Val1, m_Val2))
             {
-                if (m_List.Less(m_Index_Obj[0].GetIndex(), m_Index_Obj[1].GetIndex()))
-                    if(m_InLoopCmd)
-                        m_InLoopCmd.Operation();
-
+                case (-2, -2):
+                    if (m_List.Less(m_Index_Obj[0].GetIndex(), m_Index_Obj[1].GetIndex()))
+                        if (m_InLoopCmd)
+                            m_InLoopCmd.Operation();
+                    break;
+                case (-2, > -1):
+                    if (m_List.Less(m_Index_Obj[0].GetIndex(), m_Val2))
+                        if (m_InLoopCmd)
+                            m_InLoopCmd.Operation();
+                    break;
+                case ( > -1, -2):
+                    if (m_List.Less(m_Val1, m_Index_Obj[1].GetIndex()))
+                        if (m_InLoopCmd)
+                            m_InLoopCmd.Operation();
+                    break;
+                case ( > -1, > -1):
+                    if (m_List.Less(m_Val1, m_Val2))
+                        if (m_InLoopCmd)
+                            m_InLoopCmd.Operation();
+                    break;
+                default:
+                    break;
             }
-            else if (m_Val1 == -2 && m_Val2 > -1)
-            {
-                if (m_List.Less(m_Index_Obj[0].GetIndex(), m_Val2))
-                    if (m_InLoopCmd)
-                        m_InLoopCmd.Operation();
-            }
-            else if (m_Val1 > -1 && m_Val2 == -2)
-            {
-                if (m_List.Less(m_Val1, m_Index_Obj[1].GetIndex()))
-                    if (m_InLoopCmd)
-                        m_InLoopCmd.Operation();
-            }
-            else if (m_Val1 > -1 && m_Val2 > -1)
-            {
-                if (m_List.Less(m_Val1, m_Val2))
-                    if (m_InLoopCmd)
-                        m_InLoopCmd.Operation();
-            }
+           
 
             if (!m_OutLoopCmd)
                 return;
